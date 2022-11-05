@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.0;
+pragma solidity ^0.8.0;
 
 contract Marketplace {
-
 	// Slot 1
 	address private owner; 
 	// Slot 2
@@ -158,7 +157,7 @@ contract Marketplace {
 	// _code = 2: requestReturn
 	// _code = 3: purchaseProduct
 	// _code = 4: returnProduct
-	function morphProduct(uint32 _id, uint8 _code) external { // payable
+	function morphProduct(uint32 _id, uint8 _code) payable external { // payable
 
 		// Check if code is valid
 		require(_code > 0 && _code < 5, "Invalid code passed to morph");
